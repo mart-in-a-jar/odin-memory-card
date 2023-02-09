@@ -1,9 +1,39 @@
+import { useEffect, useState } from "react";
 import "./Card.css";
+const DEBUG = true;
 
-export default function Card({ name, image }) {
+export default function Card({
+    name,
+    image,
+    randomize,
+    incrementScore,
+    restart,
+    gameOver,
+}) {
+    const [isClicked, setIsClicked] = useState(false);
+
+    const handleClick = () => {
+        if (isClicked) {
+            restart();
+        } else {
+            setIsClicked(true);
+            incrementScore();
+        }
+        randomize();
+    };
+
+    useEffect(() => {
+        if (gameOver) {
+            setIsClicked(false);
+        }
+    }, [gameOver]);
+
     return (
-        <div className="card">
+        <div className="card" onClick={handleClick}>
             <img src={image} alt={name} />
+            {DEBUG ? (
+                <span className="debug">{isClicked ? "X" : ""}</span>
+            ) : null}
             <p>{name}</p>
         </div>
     );

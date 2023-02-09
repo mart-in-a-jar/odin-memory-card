@@ -2,7 +2,12 @@ import "./GameBoard.css";
 import { useEffect, useState } from "react";
 import Card from "./Card";
 
-export default function GameBoard({ amount }) {
+export default function GameBoard({
+    amount,
+    incrementScore,
+    gameOver,
+    restart,
+}) {
     const [cards, setCards] = useState([]);
 
     const getCards = async (amount) => {
@@ -16,22 +21,32 @@ export default function GameBoard({ amount }) {
                 img: character.image,
             };
         });
-        return cards;
-    };
-
-    const randomizeCards = async () => {
-        const cards = await getCards(amount);
         setCards(cards);
     };
 
+    const randomizeCards = async () => {
+        const newOrder = [...cards];
+        setCards(newOrder.sort(() => 0.5 - Math.random()));
+    };
+
     useEffect(() => {
-        randomizeCards();
+        getCards(amount);
     }, []);
 
     return (
         <div className="cards">
             {cards.map((card) => {
-                return <Card key={card.id} name={card.name} image={card.img} />;
+                return (
+                    <Card
+                        key={card.id}
+                        name={card.name}
+                        image={card.img}
+                        randomize={randomizeCards}
+                        incrementScore={incrementScore}
+                        restart={restart}
+                        gameOver={gameOver}
+                    />
+                );
             })}
         </div>
     );
