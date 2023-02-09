@@ -31,7 +31,7 @@ export default function GameBoard({
 
     useEffect(() => {
         getCards(amount);
-    }, []);
+    }, [amount]);
 
     return (
         <div className="cards">

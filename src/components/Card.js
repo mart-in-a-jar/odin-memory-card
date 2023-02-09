@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Card.css";
-const DEBUG = true;
+const DEBUG = false;
 
 export default function Card({
     name,
