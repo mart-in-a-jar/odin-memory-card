@@ -24,7 +24,7 @@ function App() {
     };
 
     const changeAmount = (e) => {
-        setAmount(e.target.value);
+        setAmount(+e.target.value);
         restartGame();
     };
 
