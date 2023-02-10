@@ -15,7 +15,11 @@ function App() {
         setScore(score + 1);
     };
 
-    const restartGame = () => {
+    const restartGame = (animation = "game-over") => {
+            document.querySelector(".cards").classList.add(animation);
+            setTimeout(() => {
+                document.querySelector(".cards").classList.remove(animation);
+            }, 1000);
         if (score > hiScore) {
             setHiScore(score);
         }
@@ -25,7 +29,7 @@ function App() {
 
     const changeAmount = (e) => {
         setAmount(+e.target.value);
-        restartGame();
+        restartGame("change-amount");
     };
 
     return (

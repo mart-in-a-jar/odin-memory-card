@@ -5,3 +5,29 @@
     justify-content: center;
     padding: 20px 50px;
 }
+
+@keyframes gameOver {
+    33% {
+        transform: rotate(-60deg) scale(2);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes changeAmount {
+    50% {
+        transform: scale(2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.game-over {
+    animation: gameOver 1s ease-in-out;
+}
+
+.change-amount {
+    animation: changeAmount 350ms ease-in-out;
+}
