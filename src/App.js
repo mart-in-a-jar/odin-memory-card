@@ -3,6 +3,7 @@ import "./App.css";
 import GameBoard from "./components/GameBoard";
 import ScoreBoard from "./components/ScoreBoard";
 import AmountPicker from "./components/AmountPicker";
+import Rules from "./components/Rules";
 
 function App() {
     const [score, setScore] = useState(0);
@@ -16,10 +17,10 @@ function App() {
     };
 
     const restartGame = (animation = "game-over") => {
-            document.querySelector(".cards").classList.add(animation);
-            setTimeout(() => {
-                document.querySelector(".cards").classList.remove(animation);
-            }, 1000);
+        document.querySelector(".cards").classList.add(animation);
+        setTimeout(() => {
+            document.querySelector(".cards").classList.remove(animation);
+        }, 1000);
         if (score > hiScore) {
             setHiScore(score);
         }
@@ -34,6 +35,7 @@ function App() {
 
     return (
         <>
+            <Rules />
             <AmountPicker onChange={changeAmount} amount={amount} />
             <ScoreBoard score={score} hiScore={hiScore} />
             <GameBoard

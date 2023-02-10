@@ -23,3 +23,25 @@ body {
 select {
     padding: 5px;
 }
+
+.backdrop {
+    width: 100vw;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    background-color: rgba(70, 70, 70, 0.664);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.backdrop p {
+    background-color: rgba(32, 177, 129, 0.945);
+    padding: 150px;
+    border-radius: 50px;
+    font-size: 2rem;
+    margin-bottom: 150px;
+}
