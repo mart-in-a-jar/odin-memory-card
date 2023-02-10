@@ -12,3 +12,14 @@ html {
 body {
     margin: 0;
 }
+
+.amount {
+    margin: 10px 0 0 10px;
+}
+.score {
+    margin-top: -15px;
+}
+
+select {
+    padding: 5px;
+}
