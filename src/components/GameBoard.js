@@ -25,8 +25,17 @@ export default function GameBoard({
     };
 
     const randomizeCards = async () => {
-        const newOrder = [...cards];
-        setCards(newOrder.sort(() => 0.5 - Math.random()));
+        const cardsCopy = [...cards];
+        let index = cardsCopy.length,
+            randomIndex;
+        while (index > 0) {
+            randomIndex = Math.floor(Math.random() * index--);
+            [cardsCopy[index], cardsCopy[randomIndex]] = [
+                cardsCopy[randomIndex],
+                cardsCopy[index],
+            ];
+        }
+        setCards(cardsCopy);
     };
 
     useEffect(() => {
