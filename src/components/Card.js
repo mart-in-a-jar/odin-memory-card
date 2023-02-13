@@ -11,6 +11,7 @@ export default function Card({
     gameOver,
 }) {
     const [isClicked, setIsClicked] = useState(false);
+    const [isNew, setIsNew] = useState(" new-card");
 
     const handleClick = () => {
         if (isClicked) {
@@ -28,8 +29,14 @@ export default function Card({
         }
     }, [gameOver]);
 
+    useEffect(() => {
+        return () => {
+            setIsNew("");
+        };
+    });
+
     return (
-        <div className="card" onClick={handleClick}>
+        <div className={"card" + isNew} onClick={handleClick}>
             <img src={image} alt={name} />
             {DEBUG ? (
                 <span className="debug">{isClicked ? "X" : ""}</span>

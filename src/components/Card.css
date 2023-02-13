@@ -26,3 +26,18 @@ p {
     color: red;
     transform: translate(-50%, -50%);
 }
+
+@keyframes entrance {
+    0% {
+        opacity: 0;
+    }
+    85% {
+        opacity: 0.8;
+        transform: scale(1.5) translate(-250px, -100px);
+        opacity: 1;
+    }
+}
+
+.new-card {
+    animation: entrance 300ms ease-in-out;
+}
