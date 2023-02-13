@@ -10,7 +10,7 @@ export default function Rules() {
                 setDisplay(false);
             }}
         >
-            <p>Click every image only once!</p>
+            <p>Click every character only once!</p>
         </div>
     );
 
