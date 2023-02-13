@@ -7,20 +7,35 @@ export default function GameBoard({
     incrementScore,
     gameOver,
     restart,
+    type
 }) {
     const [cards, setCards] = useState([]);
 
-    const getCards = async (amount) => {
-        const characters = await fetch(
-            "https://rickandmortyapi.com/api/character"
-        ).then((result) => result.json());
-        const cards = characters.results.slice(0, amount).map((character) => {
-            return {
-                id: character.id,
-                name: character.name,
-                img: character.image,
-            };
-        });
+    const getCards = async (type, amount) => {
+        let characters, cards;
+        if (type === "hp") {
+            characters = await fetch(
+                "https://hp-api.onrender.com/api/characters"
+            ).then((result) => result.json());
+            cards=characters.slice(0, amount).map((character) => {
+                return {
+                    id: character.id,
+                    name: character.name,
+                    img: character.image,
+                };
+            });
+        } else {
+            characters = await fetch(
+                "https://rickandmortyapi.com/api/character"
+            ).then((result) => result.json());
+            cards = characters.results.slice(0, amount).map((character) => {
+                return {
+                    id: character.id,
+                    name: character.name,
+                    img: character.image,
+                };
+            });
+        }
         setCards(cards);
     };
 
@@ -39,8 +54,8 @@ export default function GameBoard({
     };
 
     useEffect(() => {
-        getCards(amount);
-    }, [amount]);
+        getCards(type, amount);
+    }, [type, amount]);
 
     return (
         <div className="cards">

@@ -10,6 +10,7 @@ function App() {
     const [hiScore, setHiScore] = useState(0);
     const [gameOver, setGameOver] = useState(false);
     const [amount, setAmount] = useState(12);
+    const [type, setType] = useState("rm");
 
     const incrementScore = () => {
         if (gameOver) setGameOver(false);
@@ -33,18 +34,29 @@ function App() {
         restartGame(null);
     };
 
+    const changeType = () => {
+        setType(() => {
+            return type === "hp" ? "rm" : "hp";
+        });
+        restartGame(null);
+    };
+
     return (
         <>
             <Rules />
             <header>
                 <AmountPicker onChange={changeAmount} amount={amount} />
                 <ScoreBoard score={score} hiScore={hiScore} />
+                <button onClick={changeType}>
+                    {type === "rm" ? "Harry Potter" : "Rick and Morty"}
+                </button>
             </header>
             <GameBoard
                 amount={amount}
                 incrementScore={incrementScore}
                 gameOver={gameOver}
                 restart={restartGame}
+                type={type}
             />
         </>
     );

@@ -26,6 +26,15 @@ p {
     color: red;
     transform: translate(-50%, -50%);
 }
+.img {
+    height: 300px;
+    overflow: hidden;
+    width: 300px;
+}
+img {
+    width: 100%;
+    object-fit: cover;
+}
 
 @keyframes entrance {
     0% {
@@ -40,4 +49,12 @@ p {
 
 .new-card {
     animation: entrance 300ms ease-in-out;
+}
+
+@media screen and (max-width: 1000px) {
+    .img {
+        height: unset;
+        width: unset;
+        max-height: 240px;
+    }
 }

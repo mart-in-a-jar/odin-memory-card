@@ -37,7 +37,7 @@ export default function Card({
 
     return (
         <div className={"card" + isNew} onClick={handleClick}>
-            <img src={image} alt={name} />
+            <div className="img"><img src={image} alt={name} /></div>
             {DEBUG ? (
                 <span className="debug">{isClicked ? "X" : ""}</span>
             ) : null}

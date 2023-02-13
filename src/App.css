@@ -16,9 +16,6 @@ body {
 .amount {
     margin: 10px 0 0 10px;
 }
-.score {
-    margin-top: -15px;
-}
 
 select {
     padding: 5px;
@@ -47,6 +44,15 @@ select {
     cursor: pointer;
 }
 
+header {
+    display: flex;
+    justify-content: space-around;
+}
+
+header button {
+    margin-top: 5px;
+}
+
 @media screen and (max-width: 1000px) {
     img {
         width: 100%;
@@ -55,10 +61,7 @@ select {
         max-height: 30px;
         font-size: 1rem !important;
     }
-    header {
-        display: flex;
-        justify-content: space-around;
-    }
+
     .score {
         margin-top: 0;
     }
@@ -68,5 +71,8 @@ select {
     .backdrop p {
         padding: 70px 40px;
     }
-    
+}
+
+button {
+    cursor: pointer;
 }
