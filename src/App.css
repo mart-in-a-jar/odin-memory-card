@@ -46,3 +46,27 @@ select {
     margin-bottom: 150px;
     cursor: pointer;
 }
+
+@media screen and (max-width: 1000px) {
+    img {
+        width: 100%;
+    }
+    p {
+        max-height: 30px;
+        font-size: 1rem !important;
+    }
+    header {
+        display: flex;
+        justify-content: space-around;
+    }
+    .score {
+        margin-top: 0;
+    }
+    .amount {
+        margin: 5px 0 0 0;
+    }
+    .backdrop p {
+        padding: 70px 40px;
+    }
+    
+}

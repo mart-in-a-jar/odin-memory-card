@@ -36,8 +36,10 @@ function App() {
     return (
         <>
             <Rules />
-            <AmountPicker onChange={changeAmount} amount={amount} />
-            <ScoreBoard score={score} hiScore={hiScore} />
+            <header>
+                <AmountPicker onChange={changeAmount} amount={amount} />
+                <ScoreBoard score={score} hiScore={hiScore} />
+            </header>
             <GameBoard
                 amount={amount}
                 incrementScore={incrementScore}
