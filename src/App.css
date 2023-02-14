@@ -73,6 +73,12 @@ header button {
     }
 }
 
+@media screen and (max-width: 400px) {
+    label {
+        display: none;
+    }
+}
+
 button {
     cursor: pointer;
 }

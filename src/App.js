@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import GameBoard from "./components/GameBoard";
 import ScoreBoard from "./components/ScoreBoard";
 import AmountPicker from "./components/AmountPicker";
-import Rules from "./components/Rules";
+import PopUp from "./components/PopUp";
 
 function App() {
     const [score, setScore] = useState(0);
@@ -11,11 +11,16 @@ function App() {
     const [gameOver, setGameOver] = useState(false);
     const [amount, setAmount] = useState(12);
     const [type, setType] = useState("rm");
+    const [gameWon, setGameWon] = useState(false);
 
     const incrementScore = () => {
         if (gameOver) setGameOver(false);
         setScore(score + 1);
     };
+
+    useEffect(() => {
+        if (score >= amount) setGameWon(true);
+    }, [score]);
 
     const restartGame = (animation = "game-over") => {
         document.querySelector(".cards").classList.add(animation);
@@ -27,6 +32,7 @@ function App() {
         }
         setScore(0);
         setGameOver(true);
+        if (gameWon) setGameWon(false);
     };
 
     const changeAmount = (e) => {
@@ -43,7 +49,8 @@ function App() {
 
     return (
         <>
-            <Rules />
+            <PopUp text={"Click every character only once!"} />
+            {gameWon && <PopUp text={"You won!"} action={restartGame} />}
             <header>
                 <AmountPicker onChange={changeAmount} amount={amount} />
                 <ScoreBoard score={score} hiScore={hiScore} />

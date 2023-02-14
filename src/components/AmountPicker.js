@@ -8,7 +8,7 @@ export default function AmountPicker({ onChange, amount }) {
     const formId = useId();
     return (
         <div className="amount">
-            <label htmlFor={formId}>Number of images </label>
+            <label htmlFor={formId}>Level </label>
             <select
                 name="amount"
                 id={formId}
