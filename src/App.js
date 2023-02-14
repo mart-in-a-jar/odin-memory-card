@@ -4,6 +4,7 @@ import GameBoard from "./components/GameBoard";
 import ScoreBoard from "./components/ScoreBoard";
 import AmountPicker from "./components/AmountPicker";
 import PopUp from "./components/PopUp";
+import Switcher from "./components/Switcher";
 
 function App() {
     const [score, setScore] = useState(0);
@@ -54,9 +55,7 @@ function App() {
             <header>
                 <AmountPicker onChange={changeAmount} amount={amount} />
                 <ScoreBoard score={score} hiScore={hiScore} />
-                <button onClick={changeType}>
-                    {type === "rm" ? "Harry Potter" : "Rick and Morty"}
-                </button>
+                <Switcher action={changeType} state={type} />
             </header>
             <GameBoard
                 amount={amount}
