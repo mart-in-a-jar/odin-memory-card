@@ -4,6 +4,7 @@
     overflow: hidden;
     cursor: pointer;
     position: relative;
+    background-color: bisque;
 }
 
 .card:hover {
@@ -56,5 +57,13 @@ img {
         height: unset;
         width: unset;
         max-height: 240px;
+    }
+
+    img {
+        width: 100%;
+    }
+    p {
+        max-height: 30px;
+        font-size: 1rem;
     }
 }

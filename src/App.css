@@ -13,10 +13,6 @@ body {
     margin: 0;
 }
 
-.amount {
-    margin: 10px 0 0 10px;
-}
-
 select {
     padding: 5px;
 }
@@ -48,38 +44,33 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-}
-
-header button {
-    margin-top: 5px;
+    background-color: #99d2bf;
+    
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding-bottom: 5px;
 }
 
 @media screen and (max-width: 1000px) {
-    img {
-        width: 100%;
-    }
-    p {
-        max-height: 30px;
-        font-size: 1rem !important;
-    }
-
-    .score {
-        margin-top: 0;
-    }
-    .amount {
-        margin: 5px 0 0 0;
-    }
     .backdrop p {
         padding: 70px 40px;
     }
 }
 
-@media screen and (max-width: 400px) {
-    label {
-        display: none;
-    }
-}
-
 button {
     cursor: pointer;
+}
+
+#root {
+    position: relative;
+    min-width: 240px;
+    min-height: 100vh;
+    background-color: antiquewhite;
+}
+
+@media screen and (max-width: 300px) {
+    div[class*="IndicatorsContainer"] {
+        display: none;
+    }
 }

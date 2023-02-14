@@ -22,6 +22,7 @@ export default function AmountPicker({ onChange, amount }) {
                     borderColor: "hsl(0, 0%, 80%)",
                 },
                 cursor: "pointer",
+                height: "50px",
             };
         },
     };
