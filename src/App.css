@@ -75,3 +75,20 @@ button {
         display: none;
     }
 }
+
+
+#mobile-select {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+}
+
+.amount {
+    position: relative;
+}
+
+[class*="ValueContainer"] {
+    width: 39px;
+}
