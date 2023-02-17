@@ -25,7 +25,7 @@ select {
     z-index: 2;
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
 }
 
 .backdrop p {
@@ -51,6 +51,9 @@ header {
 }
 
 @media screen and (max-width: 1000px) {
+    #root {
+        --webkit-tap-highlight-color: transparent;
+    }
     .backdrop p {
         padding: 70px 15px;
         font-size: 1.2rem;
@@ -75,7 +78,6 @@ button {
         display: none;
     }
 }
-
 
 #mobile-select {
     opacity: 0;

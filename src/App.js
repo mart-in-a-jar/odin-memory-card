@@ -21,7 +21,7 @@ function App() {
 
     useEffect(() => {
         if (score >= amount) setGameWon(true);
-    }, [score]);
+    }, [score, amount]);
 
     const restartGame = (animation = "game-over") => {
         document.querySelector(".cards").classList.add(animation);
