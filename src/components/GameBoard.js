@@ -16,7 +16,7 @@ export default function GameBoard({
         //loading
         const tempCards = [];
         for (let i = 0; i < 20; i++) {
-            tempCards.push({ id: i, img: spinner});
+            tempCards.push({ id: i, img: spinner });
         }
         setCards(tempCards);
         let characters, cards;
@@ -47,7 +47,8 @@ export default function GameBoard({
                 (result) => result.json()
             );
             cards = [];
-            for (let char of characters.results) {
+            characters = characters.results.slice(0, amount);
+            for (let char of characters) {
                 const character = await fetch(char.url).then((result) =>
                     result.json()
                 );
