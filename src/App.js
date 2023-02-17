@@ -5,6 +5,7 @@ import ScoreBoard from "./components/ScoreBoard";
 import AmountPicker from "./components/AmountPicker";
 import PopUp from "./components/PopUp";
 import Switcher from "./components/Switcher";
+import Header from "./components/Header";
 
 function App() {
     const [score, setScore] = useState(0);
@@ -52,11 +53,14 @@ function App() {
         <>
             <PopUp text={"Click every character only once!"} />
             {gameWon && <PopUp text={"You won!"} action={restartGame} />}
-            <header>
-                <AmountPicker onChange={changeAmount} amount={amount} />
-                <ScoreBoard score={score} hiScore={hiScore} />
-                <Switcher action={changeType} state={type} />
-            </header>
+            <Header
+                changeAmount={changeAmount}
+                amount={amount}
+                score={score}
+                hiScore={hiScore}
+                switchAction={changeType}
+                switchState={type}
+            />
             <GameBoard
                 amount={amount}
                 incrementScore={incrementScore}
