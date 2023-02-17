@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import GameBoard from "./components/GameBoard";
-import ScoreBoard from "./components/ScoreBoard";
-import AmountPicker from "./components/AmountPicker";
 import PopUp from "./components/PopUp";
-import Switcher from "./components/Switcher";
 import Header from "./components/Header";
 
 function App() {
