@@ -16,7 +16,7 @@ export default function Header({
         const header = document.querySelector("header");
         const headerHeight = header.offsetHeight;
         let lastScrollPos = window.scrollY;
-        let currentScrollPos, scrollDir, lastScrollDir;
+        let currentScrollPos, scrollDir;
 
         const scrollFunc = () => {
             currentScrollPos = window.scrollY;
@@ -27,7 +27,6 @@ export default function Header({
             }
 
             toggleHeader(scrollDir, currentScrollPos);
-            lastScrollDir = scrollDir;
             lastScrollPos = currentScrollPos;
         };
 
