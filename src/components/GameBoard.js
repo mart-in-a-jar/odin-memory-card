@@ -46,7 +46,9 @@ export default function GameBoard({
                 );
                 cards.push({
                     id: character.id,
-                    name: character.name,
+                    name:
+                        character.name.slice(0, 1).toUpperCase() +
+                        character.name.slice(1),
                     img: character.sprites.front_default,
                 });
             }
