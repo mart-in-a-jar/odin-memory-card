@@ -7,7 +7,7 @@ export default function GameBoard({
     incrementScore,
     gameOver,
     restart,
-    type
+    type,
 }) {
     const [cards, setCards] = useState([]);
 
@@ -17,14 +17,14 @@ export default function GameBoard({
             characters = await fetch(
                 "https://hp-api.onrender.com/api/characters"
             ).then((result) => result.json());
-            cards=characters.slice(0, amount).map((character) => {
+            cards = characters.slice(0, amount).map((character) => {
                 return {
                     id: character.id,
                     name: character.name,
                     img: character.image,
                 };
             });
-        } else {
+        } else if (type === "rm") {
             characters = await fetch(
                 "https://rickandmortyapi.com/api/character"
             ).then((result) => result.json());
@@ -35,6 +35,21 @@ export default function GameBoard({
                     img: character.image,
                 };
             });
+        } else if (type === "poke") {
+            characters = await fetch("https://pokeapi.co/api/v2/pokemon").then(
+                (result) => result.json()
+            );
+            cards = [];
+            for (let char of characters.results) {
+                const character = await fetch(char.url).then((result) =>
+                    result.json()
+                );
+                cards.push({
+                    id: character.id,
+                    name: character.name,
+                    img: character.sprites.front_default,
+                });
+            }
         }
         setCards(cards);
     };

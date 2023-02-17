@@ -41,7 +41,7 @@ function App() {
 
     const changeType = () => {
         setType(() => {
-            return type === "hp" ? "rm" : "hp";
+            return type === "rm" ? "hp" : type === "hp" ? "poke" : "rm";
         });
         restartGame(null);
     };
