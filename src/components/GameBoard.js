@@ -1,6 +1,7 @@
 import "./GameBoard.css";
 import { useEffect, useState } from "react";
 import Card from "./Card";
+import spinner from "../img/spinner.svg";
 
 export default function GameBoard({
     amount,
@@ -12,6 +13,12 @@ export default function GameBoard({
     const [cards, setCards] = useState([]);
 
     const getCards = async (type, amount) => {
+        //loading
+        const tempCards = [];
+        for (let i = 0; i < 20; i++) {
+            tempCards.push({ id: i, img: spinner});
+        }
+        setCards(tempCards);
         let characters, cards;
         if (type === "hp") {
             characters = await fetch(
