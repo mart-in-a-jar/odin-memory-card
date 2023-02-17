@@ -15,7 +15,7 @@ export default function GameBoard({
     const getCards = async (type, amount) => {
         //loading
         const tempCards = [];
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < amount; i++) {
             tempCards.push({ id: i, img: spinner });
         }
         setCards(tempCards);
