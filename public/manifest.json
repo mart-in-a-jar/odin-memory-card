@@ -1,0 +1,19 @@
+{
+    "name": "Memory card game",
+    "short_name": "Memory",
+    "icons": [
+      {
+        "src": "favicon.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "favicon.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "theme_color": "#53A7CE",
+    "background_color": "#D03D9E",
+    "display": "standalone"
+  }
