@@ -22,10 +22,12 @@ function App() {
     }, [score, amount]);
 
     const restartGame = (animation = "game-over") => {
-        document.querySelector(".cards").classList.add(animation);
-        setTimeout(() => {
-            document.querySelector(".cards").classList.remove(animation);
-        }, 1000);
+        if (animation) {
+            document.querySelector(".cards").classList.add(animation);
+            setTimeout(() => {
+                document.querySelector(".cards").classList.remove(animation);
+            }, 1000);
+        }
         if (score > hiScore) {
             setHiScore(score);
         }
