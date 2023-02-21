@@ -54,6 +54,7 @@ export default function AmountPicker({ onChange, amount }) {
                     name="amount"
                     id="mobile-select"
                     onChange={changeValueMobile}
+                    value={amount}
                 >
                     {options.map((option) => {
                         return (
