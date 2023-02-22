@@ -1,17 +1,18 @@
 {
   "files": {
     "main.css": "/odin-memory-card/static/css/main.84486c91.css",
-    "main.js": "/odin-memory-card/static/js/main.5ee10756.js",
+    "main.js": "/odin-memory-card/static/js/main.7da35777.js",
     "static/media/rm.png": "/odin-memory-card/static/media/rm.07347b8403bd5851ae46.png",
+    "service-worker.js": "/odin-memory-card/service-worker.js",
     "static/media/poke.png": "/odin-memory-card/static/media/poke.73da829adaff04afa9cc.png",
     "static/media/hp.png": "/odin-memory-card/static/media/hp.9ca9580536551d306723.png",
     "index.html": "/odin-memory-card/index.html",
     "static/media/spinner.svg": "/odin-memory-card/static/media/spinner.f7d4fd9a2acc1d9d56f4cd553512259d.svg",
     "main.84486c91.css.map": "/odin-memory-card/static/css/main.84486c91.css.map",
-    "main.5ee10756.js.map": "/odin-memory-card/static/js/main.5ee10756.js.map"
+    "main.7da35777.js.map": "/odin-memory-card/static/js/main.7da35777.js.map"
   },
   "entrypoints": [
     "static/css/main.84486c91.css",
-    "static/js/main.5ee10756.js"
+    "static/js/main.7da35777.js"
   ]
 }
